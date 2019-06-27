@@ -1,0 +1,32 @@
+1
+  Time complexity is an estimate of the time it takes a program to run.  Time complexity is a measure of how efficient an algorithm is based upon its input.
+
+2.
+  Runtime is the actual duration of an algorithm; used interchangeably with time complexity.
+
+3.
+  Runtime is calculated by adding up the instructinons the algorithm will execute as a function of the size of its input, simplified to the largest term and having dropped any constants.
+
+4.
+  From most to least efficient:
+    - constant growth rate
+    - logarithmic growth rate
+    - linear growth rate
+    - log-linear growth rate
+    - quadratic growth rate  
+    - cubic growth rate
+    - exponential growth rate
+
+5.
+  A real life example of a constant growth rate is a magician asking a volunteer to pick any card out of a deck.
+
+6.
+  This linear search has a linear growth rate (O(n)).
+
+7. 
+  This example has a quadratic growth rate (O(n ^ 2)).
+
+8. 
+  This example has an exponential growth rate (O(2 ^ n)).
+
+9. Of these three examples, the most efficient is the linear growth rate from our linear search seen in question 6.
