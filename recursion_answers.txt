@@ -1,0 +1,51 @@
+1.
+  Recursion is a function that calls itself with its parameters incrementally moving toward one of the base cases (condition that terminates the recursion).  Iteration is a loop repeatedly executing until a condition becomes false.
+
+2. 
+  Algorithms commonly implented by incursion include:
+   -- Fibonacci
+   -- Euclidean
+   -- Tower of Hanoi
+   -- Factorial
+   -- Merge sort and any other divide-and-conquer algorithm.
+
+3.
+  Recursion is best used for problems that can be easily broken down into sub-problems; like divide-and-conquer algorithsm (merge sort).  As recursive functions are not as efficient as iterative functions, we want to avoid these in instances where it's not abundantly clear that recursion is the best option.  Recursion should be avoided when memory/stack space is a concern.
+
+4.
+  In comparing the recursive and iterative solutions discussed in the checkpoint, they are similar in that both can be used and do provide correct results.  Difference though is code readability and runtimes.
+
+5. 
+let countItems = 0;
+
+function countItemsInArray (array) {
+  if (!Array.isArray(array)) {
+    countItems ++;
+  }
+  for (let i = 0; i < array.length; i++) {
+    countItemsInArray(array[i]);
+    }
+	return countItems;
+}
+
+let testArrayOfArrays = [[1, 2], [3, 4], [5, 6, 7]];
+console.log(countItemsInArray(testArrayOfArrays));
+
+6.
+function isItAPalindrome(string) {
+	if (string.length <= 1) {
+		return true;
+	}
+
+	if (string[0] === string[string.length - 1]) {
+		return isItAPalindrome(string.slice(1, string.length - 1));
+	}
+
+	return false;
+}
+
+console.log(isItAPalindrome('tricia'));
+console.log(isItAPalindrome('racecar'));
+
+7.
+  Since recursion is a procedure calling itself, Google's recursion Easter Egg is having the search reference itself.
