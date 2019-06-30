@@ -1,0 +1,58 @@
+1.
+A real-life scenario that uses linear search is like a substitute teacher going through a roster for attendance to find a student; they start at the top of the list and work their way down.
+
+2.
+A real-life scenario that uses binary search is looking through a dictionary; you would open to somewhere in the middle to see where you are and then compare the word you are searching for to that point.
+
+3.
+7 iterations in a linear search
+
+4.
+3 iterations in a binary search
+
+5.
+Given an unsorted collection of items, I would opt for a linear search as a binary search does not work on unsorted collections.
+
+6.
+Given a sorted collection, I would opt for a binary search; it would be far more efficient for a collection of that size.
+
+PROGRAMMING
+
+1.
+function wordSearch(dictionary, word) {
+  let low= dictionary[0];
+  let high = dictionary[dictionary.length - 1];
+
+  while (low <= high) {
+    let mid = (dictionary.indexOf(low) + dictionary.indexOf(high)) / 2;
+    mid = Math.round(mid);
+
+    if (dictionary[mid] > word) {
+      high = dictionary[mid - 1];
+    } else if (dictionary[mid] < word) {
+      low = dictionary[mid + 1];
+    } else {
+      return dictionary[mid];
+    }
+  }
+  return 'Item not found in dictionary.';
+}
+
+let dictionary = ['Albatross', 'Cat','Dog','Elephant','Fox'];
+console.log(wordSearch(dictionary, 'Monkey'));
+console.log(wordSearch(dictionary, 'Albatross'));
+
+2. 
+function netFish(fishInTank, fishToNet) {
+  for (let i = 0; i < fishInTank.length; i++) {
+    if (fishInTank[i] === fishToNet) {
+      return 'Net this fish.';
+    }
+  }
+  return 'There are no ' + fishToNet + '.';
+}
+
+let fishInTank = ['Nemo', 'Dory', 'Fish', 'White-spotted goldfish', 'Goldfish'];
+
+console.log(netFish(fishInTank, 'White-spotted goldfish'));
+console.log(netFish(fishInTank, 'Marlin'));
