@@ -13,20 +13,21 @@
   Recursion is best used for problems that can be easily broken down into sub-problems; like divide-and-conquer algorithsm (merge sort).  As recursive functions are not as efficient as iterative functions, we want to avoid these in instances where it's not abundantly clear that recursion is the best option.  Recursion should be avoided when memory/stack space is a concern.
 
 4.
-  In comparing the recursive and iterative solutions discussed in the checkpoint, they are similar in that both can be used and do provide correct results.  Difference though is code readability and runtimes.
+  In comparing the recursive and iterative solutions discussed in the checkpoint, they are similar in that both can be used and do provide correct results.  Difference though is code readability and runtimes; since the maximum isn't one that can be broken down into sub-problems, the readability of the recursive solution is inferior to the readability of the iterative.  On the other side, the factorial problem eis easily broken down into smaller problems, making the recursive solution superior. 
 
 5. 
-let countItems = 0;
-
 function countItemsInArray (array) {
-  if (!Array.isArray(array)) {
-    countItems ++;
-  }
-  for (let i = 0; i < array.length; i++) {
-    countItemsInArray(array[i]);
+  let countItems = 0;
+  if (Array.isArray(array)) {
+    for (let i = 0; i < array.length; i++) {
+      countItems += countItemsInArray(array[i]);
     }
-	return countItems;
+  } else {
+    countItems ++;
+  } 
+  return countItems;
 }
+
 
 let testArrayOfArrays = [[1, 2], [3, 4], [5, 6, 7]];
 console.log(countItemsInArray(testArrayOfArrays));
