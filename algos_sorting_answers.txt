@@ -1,0 +1,45 @@
+1.
+function bubbleSort(array) {
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] > array[i + 1]) {
+        let temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+  return array;
+};
+console.log(bubbleSort([1, 10, 2, 9, 3, 8, 7, 4, 6, 5]));
+
+2.
+FUNCTION quickSort(array)
+  SET low to 0
+  SET high to array -1
+    IF low < high 
+      SET pivotPoint to high
+      SET left to empty array
+      SET right to empty array
+
+    FOR index from 0 to high -1
+    IF array[index] is less than pivot
+      PUSH array[index] to left
+    IF array[index] is greater than pivot
+      PUSH array[index] to right
+    ELSE return 'ERROR'
+    END FOR
+
+REPEAT quickSort(left)
+REPEAT quickSort(right)
+CONCAT left and right
+END function
+
+3.
+Merge and quick sort are more efficient because of their divide and conquer methodology.  They don't have to loop through the entire array as a bubble sort would.
+
+4.
+Bucket sort is a distribution sort (though it can be considered a comparison sort).  It works by distributing elements into a 'bucket' and then sorting these buckets before concating them back into the original (now sorted) array.  Best usage of bucket sort is when the elements are evenly distributed among the buckets.
